@@ -1,0 +1,48 @@
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="style.css">
+    <title>Ruta Patrimonial Barrio Franklin</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://d3plus.org/js/d3plus-hierarchy.v0.8.full.min.js"></script>
+</head>
+
+<body>
+
+    <nav>
+        <a href="index.html">HOLA</a> <a href="chartjs-line.html">Line chart</a> <a href="chartjs-bar.html">Bar chart</a> <a href="chartjs-radar.html">Radar chart</a> <a href="c3js-line.html">Line Chart</a> <a href="d3plus-treemap.html" class="actual">RUTA PATRIMONIAL</a>
+    </nav>
+
+    <div id="chart.patrimonial" width="80" height="45"></div>
+    
+
+    <script>
+        var data = [
+  {id: "Edificios Patrimoniales", value: 8},
+  {id: "Gastronomía", value: 9},
+  {id: "Antiguedades", value: 11},
+  {id: "Vinilos", value: 4},
+  {id: "Juguetes", value: 4},
+  {id: "Cultura", value: 5},
+  {id: "Diseño", value: 6},
+  {id: "Productos Naturales", value: 5}
+];
+
+new d3plus.Treemap()
+  .data(data)
+  .groupBy("id")
+  .on("click", function(d) {
+    alert(d.id + " has been clicked!");
+  })
+  .sum("value")
+  .render();
+
+    </script>
+    <div id="info">
+      <p>Puedes leer estos datos <a href="https://issuu.com/patrimoniosustentable/docs/guia_barrio_franklin">aquí</a> </p>
+    </div>
+</body>
+
+</html>

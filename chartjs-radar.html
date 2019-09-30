@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="style.css">
+    <title>RADAR CHART</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
+</head>
+
+<body>
+
+    <nav>
+        <a href="index.html">Index</a> <a href="chartjs-line.html">Line chart</a> <a href="chartjs-bar.html">Bar chart</a> <a href="chartjs-radar.html" class="actual">Radar chart</a> <a href="c3js-line.html">Line Chart</a> <a href="d3plus-treemap.html">Treemap</a>
+    </nav>
+
+    <canvas id="chart" width="80" height="45"></canvas>
+
+    <script>
+        var w = document.body.offsetWidth;
+        var sel;
+        function setup() {
+            noCanvas();
+            sel = createSelect();
+            sel.position(w - 180, 18);
+            sel.option('años', 0);
+            sel.option('total del prestamo', 1);
+            sel.changed(opciones);
+            americano();
+        }
+        function opciones() {
+            clear();
+            if (sel.value() == 0) {
+                americano();
+            } else {
+                europeo();
+            }
+        }
+        function americano() {
+            new Chart(document.getElementById('chart').getContext('2d'), {
+                type: 'radar',
+                data: {
+                    labels: ["año 1","año 2","año 3","año 4","año 5"],
+                    datasets: [{
+                        label: "Estudios y Planes de Mejoramiento de la Competitividad",
+                        backgroundColor: 'rgba(155, 155, 255,.1)',
+                        borderColor: '#79f',
+                        borderWidth: 1,
+                        pointRadius: 1,
+                        lineTension: 0,
+                        data: [150325000, 147414815, 133000000, 126000000, 65000000],
+                    }, {
+                        label: "Fortalecimiento de la Asociatividad Empresarial",
+                        backgroundColor: 'rgba(200, 200, 0,.1)',
+                        borderColor: '#dd9',
+                        borderWidth: 1,
+                        pointRadius: 1,
+                        lineTension: 0,
+                        data: [67165000, 68600000, 49000000, 56000000, 49287778],
+                    }, {
+                        label: "Diversificación del Perfil de Producción Local",
+                        backgroundColor: 'rgba(200, 155,200,.1)',
+                        borderColor: '#99d',
+                        borderWidth: 1,
+                        pointRadius: 1,
+                        lineTension: 0,
+                        data: [0, 0, 35000000, 46900000, 40000000],
+                    }, {
+                        label: "Financiamiento al mejoramiento de la infraestructura",
+                        backgroundColor: 'rgba(200, 155,200,.1)',
+                        borderColor: '#99d',
+                        borderWidth: 1,
+                        pointRadius: 1,
+                        lineTension: 0,
+                        data: [0, 70000000, 42596296, 40000000, 56077778],
+                    
+                    }]
+                },               
+                options: {
+                    title: {
+                        display: true,
+                        text: 'Años'
+                    },
+                    legend: {
+                        position: 'bottom'
+                    },
+                    scale: {
+                        ticks: {
+                            min: 0,
+                            max: 160000000,
+                            stepSize: 50000000
+                        }
+                    }
+                }
+            });
+        }
+        function europeo() {
+            new Chart(document.getElementById('chart').getContext('2d'), {
+                type: 'radar',
+                data: {
+                    labels: ["año 1","año 2","año 3","año 4","año 5"],
+                    datasets: [{
+                        label: "Total del prestamo",
+                        backgroundColor: 'rgba(255, 175, 175,.1)',
+                        borderColor: '#F44336',
+                        borderWidth: 1,
+                        pointRadius: 1,
+                        lineTension: 0,
+                        data: [21749000, 286014814, 352800000, 271496296, 210365555],
+                    
+                    }]
+                },
+                options: {
+                    title: {
+                        display: true,
+                        text: 'total del prestamo'
+                    },
+                    legend: {
+                        position: 'bottom'
+                    },
+                    scale: {
+                        ticks: {
+                            min: 0,
+                            max: 400000000,
+                            stepSize: 50000000
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+
+</body>
+
+</html>

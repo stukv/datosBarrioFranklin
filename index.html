@@ -1,0 +1,40 @@
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="style.css">
+    <title>¡HOLA!</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
+</head>
+
+<body>
+
+    <nav>
+        <a href="index.html" class="actual">HOLA</a> <a href="chartjs-line.html">Line chart</a> <a href="chartjs-bar.html">Bar chart</a> <a href="chartjs-radar.html">Radar chart</a> <a href="c3js-line.html">Line Chart</a> <a href="d3plus-treemap.html">RUTA PATRIMONIAL</a>
+    </nav>
+
+    <div id="home">
+        <p>¡Hola! Somos Bastian Flores y Andrea Gatica. En este sitio web podrás ver datos sobre nuestra investigación sobre <span id="saluda"></span></p>
+    </div>
+    <script>
+        var saludos = ["Barrio Franklin"];
+        var cromas = ["#ff8a80", "#ea80fc", "#8c9eff", "#80d8ff"]
+
+        function setup() {
+            noCanvas();
+            createElement('strong', random(saludos) + '!').parent('saluda').style('color', random(cromas));
+        }
+    </script>
+       <div id= "parrafo">
+           <p><b>La Bienal de Arquitectura y Urbanismo 2019 tendrá lugar, por primera vez, en un espacio público.</b> </p>
+            <p>En éste sitio analizaremos factores importantes que inciden en el desarrollo de un proyecto como éste, que convoca a más de 20 escuelas de Arquitectura. </p>
+           <p>Puedes revisar información sobre la Bienal <a href="https://www.bienalarquitectura.cl/">aquí</a> </p>
+           <p>Puedes revisar más información sobre Barrio Franklin <a href="https://www.yoamobarriofranklin.com/">aquí</a> </p>
+        </div> 
+       
+
+</body>
+
+</html>

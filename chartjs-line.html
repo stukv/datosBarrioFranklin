@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="style.css">
+    <title>LINE CHART</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
+</head>
+
+<body>
+    <nav>
+        <a href="index.html">Index</a> <a href="chartjs-line.html" class="actual">Line chart</a> <a href="chartjs-bar.html">Bar chart</a> <a href="chartjs-radar.html">Radar chart</a> <a href="c3js-line.html">Line Chart</a> <a href="d3plus-treemap.html">Treemap</a>
+    </nav>
+
+    <canvas id="line-chart" width="600" height="400"></canvas>
+
+    <script>
+      new Chart(document.getElementById("line-chart"), {
+  type: 'line',
+  data: {
+    labels: ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"],
+    datasets: [{ 
+        data: [45,50,125,87,52,68,118,102,153,92,93,107],
+        label: "robo de objetos",
+        borderColor: "#3e95cd",
+        fill: true
+      }, { 
+        data: [12,15,30,27,25,10,20,37,31,11,9,10],
+        label: "hurtos",
+        borderColor: "#8e5ea2",
+        fill: true
+      }, { 
+        data: [10,22,7,14,15,7,10,8,4,13,9,6],
+        label: "robo por sorpresa",
+        borderColor: "#3cba9f",
+        fill: true
+      }, { 
+        data: [3,5,13,9,18,15,5,19,26,17,28,32],
+        label: "receptacion",
+        borderColor: "#e8c3b9",
+        fill: true
+      }
+    ]
+  },
+  options: {
+    title: {
+      display: true,
+      text: 'indice de robos 2017'
+    }
+  }
+});
+    </script>
+
+</body>
+
+</html>
